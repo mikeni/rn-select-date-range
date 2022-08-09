@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   noneSelectedDate: {
-    color: "black",
+    color: "red",
   },
   today: {
     color: "blue",
