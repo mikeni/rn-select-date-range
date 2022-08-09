@@ -27,6 +27,7 @@ interface IProps {
   selectedDateContainerStyle?: ViewStyle;
   selectedDateStyle?: TextStyle;
   ln?: string;
+  noneSelectedDateStyle?: TextStyle;
 }
 
 const DateRangePicker = ({
@@ -38,6 +39,7 @@ const DateRangePicker = ({
   font,
   selectedDateContainerStyle,
   selectedDateStyle,
+  noneSelectedDateStyle,
   ln = "en",
 }: IProps) => {
   const [selectedDate, setSelectedDate] = useState(moment());
@@ -152,6 +154,7 @@ const DateRangePicker = ({
         secondDate={secondDate}
         maxDate={maxDate}
         minDate={minDate}
+        noneSelectedDateStyle={noneSelectedDateStyle}
         selectedDateContainerStyle={selectedDateContainerStyle}
         selectedDateStyle={selectedDateStyle}
       />

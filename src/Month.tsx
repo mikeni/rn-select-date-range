@@ -19,6 +19,7 @@ interface IProps {
   onSelectDate: (date: moment.Moment) => void;
   firstDate: moment.Moment | null;
   secondDate: moment.Moment | null;
+  noneSelectedDateStyle?: TextStyle;
 }
 
 export default ({
@@ -31,6 +32,7 @@ export default ({
   selectedDateContainerStyle,
   font,
   selectedDateStyle,
+  noneSelectedDateStyle
 }: IProps) => {
   const weekDayShort = moment.weekdaysShort();
   const weekDayShortName = weekDayShort.map((day) => {
@@ -97,8 +99,9 @@ export default ({
                     ? selectedDateStyle
                     : styles.selectedDate
                   : isToday
-                  ? styles.today
-                  : styles.noneSelectedDate,
+                  ? styles.today 
+                    : noneSelectedDateStyle
+                  ? noneSelectedDateStyle : styles.noneSelectedDate,
                 { opacity: isDisabledMAXD || isDisabledMIND ? 0.2 : 1 },
               ]}
             >
